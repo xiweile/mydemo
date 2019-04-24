@@ -927,11 +927,9 @@ if (option && typeof option === "object") {
     myChart5.setOption(option, true);
 }
 //根据窗口的大小变动图表 --- 重点
-window.onresize = function(){
+$('#container5').resize(function () {
     myChart5.resize();
-    //myChart51.resize();    //若有多个图表变动，可多写
-
-}
+});
        </script>
    </body>
 </html>

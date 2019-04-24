@@ -1070,11 +1070,9 @@
         myChart3.setOption(option, true);
     }
     //根据窗口的大小变动图表 --- 重点
-    window.onresize = function () {
+    $('#container3').resize(function () {
         myChart3.resize();
-        //myChart31.resize();    //若有多个图表变动，可多写
-
-    }
+    });
 </script>
 </body>
 </html>

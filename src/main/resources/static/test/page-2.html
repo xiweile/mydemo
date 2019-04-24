@@ -84,11 +84,9 @@
                    myChart2.setOption(option, true);
                }
                //根据窗口的大小变动图表 --- 重点
-               window.onresize = function(){
+               $('#container2').resize(function () {
                    myChart2.resize();
-                   //myChart21.resize();    //若有多个图表变动，可多写
-
-               }
+               });
 
        </script>
    </body>

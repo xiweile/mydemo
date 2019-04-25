@@ -1,5 +1,7 @@
 package com.weiller.demo.desktop.service;
 
+import com.weiller.demo.desktop.entity.CustomPanel;
+import com.weiller.demo.desktop.entity.DmPanel;
 import com.weiller.demo.desktop.entity.PanelDetails;
 
 import java.util.List;
@@ -9,13 +11,20 @@ import java.util.List;
  */
 public interface DesktopService {
 
-    List<PanelDetails> findCustomPanelsByUserId();
+    List<DmPanel> findAllDmPanel();
+
+    List<PanelDetails> findCustomPanelsByUserId(String userId);
 
     PanelDetails getCustomPanel(String id);
 
-    void addCustomPanel(PanelDetails panel);
+    PanelDetails addCustomPanel(CustomPanel panel);
 
-    void updateCustomPanel(List<PanelDetails> Panels);
+    void updateCustomPanel(String userId,List<CustomPanel> Panels);
 
-    void deleteCustomPanel();
+    void deleteCustomPanel(String id);
+
+    void deletePanel(Integer id);
+
+    DmPanel saveOrUpdatePanel(DmPanel panel);
+
 }

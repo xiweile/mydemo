@@ -15,19 +15,19 @@
  	 	
 		<!-- 数据库链接URL、用户名、密码 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-			connectionURL="jdbc:mysql://10.10.8.10:3306/fwyh" userId="root" password="123456" />
+			connectionURL="jdbc:mysql://localhost:3306/demo" userId="root" password="xiweile" />
 			
 		<!-- 生成模型的包名和位置 -->
-		<javaModelGenerator targetPackage="com.foresee.fwyh.entity" targetProject="src/main/java" />
+		<javaModelGenerator targetPackage="com.weiller.demo.desktop.entity" targetProject="src/main/java" />
 		
 		<!-- 生成的映射文件报名和位置 -->
 		<sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
 		
 		<!-- 生成DAO的包名和位置 -->
-		<javaClientGenerator targetPackage="com.foresee.fwyh.dao" targetProject="src/main/java" type="XMLMAPPER" />
+		<javaClientGenerator targetPackage="com.weiller.demo.desktop.dao" targetProject="src/main/java" type="XMLMAPPER" />
 		
 		<!-- 要生成的那些表(更改tableName 和domainObjectName 就可以了) -->
-		<table tableName="yh_yhzc_nsr_ycxx" domainObjectName="YhNsrYcxx"
+		<table tableName="custom_panel" domainObjectName="CustomPanel"
                 enableCountByExample="false"
                 enableDeleteByExample="false"
                 enableSelectByExample="false"

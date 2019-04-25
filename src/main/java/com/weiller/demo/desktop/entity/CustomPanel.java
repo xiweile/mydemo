@@ -2,25 +2,25 @@ package com.weiller.demo.desktop.entity;
 
 import lombok.Data;
 
-/**
- * 自定义的面板
- */
+import java.util.Date;
+
 @Data
 public class CustomPanel {
+    private String id;
 
-    public String id;
+    private String userId;
 
-    public int x;
+    private Integer panelId;
 
-    public int y;
+    private Integer x;
 
-    public int width;
+    private Integer y;
 
-    public int height;
+    private Integer width;
 
-    public int panelId;
+    private Integer height;
 
-    public int userId;
+    private String yxbz;
 
-    public String yxbz;
+    private Date createTime;
 }

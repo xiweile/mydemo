@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html style="height: 100%">
    <head>
-       <meta charset="utf-8">
+       <meta charset="utf-6">
    </head>
    <body style="height: 100%; margin: 0">
-       <div id="container8" style="height: 100%"></div>
+       <div id="container6" style="height: 100%"></div>
        <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
        <script type="text/javascript">
-var dom8 = document.getElementById("container8");
-var myChart8 = echarts.init(dom8);
+var dom6 = document.getElementById("container6");
+var myChart6 = echarts.init(dom6);
 var app = {};
 option = null;
-myChart8.showLoading();
+myChart6.showLoading();
 
 var colorList = ['#f75757','#f9cb3f','#27c24c','#2cdafc','#23a2f5'];
 option = {
@@ -72,11 +72,11 @@ option = {
                 symbol:'none',
                 lineStyle:{type:'solid'},
                 data: [
-                    [{x:'35%',y:'18%'},{x:'90%',y:'18%',value:'1个',lineStyle:{color:colorList[0]}}],
+                    [{x:'35%',y:'16%'},{x:'90%',y:'16%',value:'1个',lineStyle:{color:colorList[0]}}],
                     [{x:'35%',y:'34%'},{x:'90%',y:'34%',value:'3个',lineStyle:{color:colorList[1]}}],
                     [{x:'35%',y:'50%'},{x:'90%',y:'50%',value:'10个',lineStyle:{color:colorList[2]}}],
                     [{x:'35%',y:'66%'},{x:'90%',y:'66%',value:'11个',lineStyle:{color:colorList[3]}}],
-                    [{x:'35%',y:'82%'},{x:'90%',y:'82%',value:'5个',lineStyle:{color:colorList[4]}}],
+                    [{x:'35%',y:'62%'},{x:'90%',y:'62%',value:'5个',lineStyle:{color:colorList[4]}}],
                 ]
             },
             data: [
@@ -90,14 +90,14 @@ option = {
     ]
 };
 
-myChart8.hideLoading();
+myChart6.hideLoading();
 
 if (option && typeof option === "object") {
-    myChart8.setOption(option, true);
+    myChart6.setOption(option, true);
 }
 //根据窗口的大小变动图表 --- 重点
-$('#container8').resize(function () {
-    myChart8.resize();
+$('#container6').resize(function () {
+    myChart6.resize();
 });
        </script>
    </body>

@@ -367,11 +367,19 @@
         var n = _.find(this.nodes, function (n) { return n._updating; });
         if (n) {
             n._updating = false;
+            // *** 主动变化的元素,如果是存在i标签，则自适应icon的大小
+            let content = n.el.children('.grid-stack-item-content');
+            let icon = content.find('i.iconfont');
+            if(icon.length>0) {
+                let width = parseInt(content.css('width'));
+                let height = parseInt(content.css('height'));
+                icon.css('font-size', (width > height ? height / 2 : width / 2 ) + 'px');
+            }
+            // ***************
         }
         let nodes =[];
         $.each(this.nodes,function (i,node) {
             nodes.push({id:node.id,x: node.x, y: node.y, width: node.width, height: node.height,src:node.src});
-
         });
         console.log("update:");
         console.log(nodes)
@@ -570,6 +578,7 @@
 
         var node = self.grid.add_node({
             id:el.attr('data-id'),
+            title:el.attr('data-title'),
             x: el.attr('data-gs-x'),
             y: el.attr('data-gs-y'),
             width: el.attr('data-gs-width'),
@@ -696,10 +705,28 @@
         this.container.append(el);
         this._prepare_element(el);
         this._update_container_height();
-        // 添加了div内容
+        // 添加div内容
         let content = el.children('.grid-stack-item-content');
-        //content.children('iframe').attr('src',el.attr('data-content-src'));
-        content.load(el.attr('data-content-src'));
+        let src = el.attr('data-content-src');
+        let end = src.substring(src.lastIndexOf('.'));
+        console.log(end);
+        if('.html'=== end){
+            content.load(el.attr('data-content-src')); // 页面路径加载
+        }else if ('.png'=== end|| '.jpg'===end){
+            content.html('<img style="width: 100%;height: auto;"  src="'+src+'"/>');
+        }else {
+            content.html(el.attr('data-content-src'));
+            el.children(".ui-title-se").text(el.attr('data-title'));
+            // *** 主动变化的元素,如果是存在i标签，则自适应icon的大小
+
+            let icon = content.find('i.iconfont');
+            if(icon.length>0) {
+                let width = parseInt(content.css('width'));
+                let height = parseInt(content.css('height'));
+                icon.css('font-size', (width > height ? height / 2 : width / 2 ) + 'px');
+            }
+            // ***************
+        }
 
         return el;
     };
@@ -851,7 +878,7 @@
         });
     };
 
-    GridStack.prototype.cell_height = function (val) {
+    GridStack.prototype.cell_height = function (val) {debugger
         if (typeof val == 'undefined') {
             return this.opts.cell_height;
         }

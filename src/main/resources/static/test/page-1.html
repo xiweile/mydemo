@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container1" style="height: 100%"></div>
+       <script type="text/javascript" src="../js/echarts.min.js"></script>
+       <script type="text/javascript">
+var dom1 = document.getElementById("container1");
+var myChart1 = echarts.init(dom1);
+var app = {};
+option = null;
+myChart1.showLoading();
+
+var ydata = [{
+    name: '工种1',
+    value: 13
+},
+    {
+        name: '工种2',
+        value: 25
+    },
+    {
+        name: '工种3',
+        value: 27
+    },
+    {
+        name: '工种4',
+        value: 30
+    },
+    {
+        name: '工种5',
+        value: 20
+    }
+];
+var color =["#BC8DEE", "#8693F3","#89C3F8","#F2A695","#FCC667","#AEB7F9","#748BFA"]
+var xdata = ['工种1', "工种2", "工种3", "工种4", '工种5'];
+option = {
+    color:color,
+    legend: {
+        orient: "vartical",
+        x: "left",
+        top: "40%",
+        left: "80%",
+        bottom: "0%",
+        data: xdata,
+        itemWidth: 20,
+        itemHeight: 14,
+        itemGap :15,
+        formatter :function(name){
+            return '   '+name
+        }
+    },
+    series: [{
+        name: '违规次数',
+        type: 'pie',
+        clockwise: false, //饼图的扇区是否是顺时针排布
+        minAngle: 20, //最小的扇区角度（0 ~ 360）
+        radius: ["30%", "58%"],
+        center: ["35%", "50%"],
+        avoidLabelOverlap: false,
+        itemStyle: { //图形样式
+            normal: {
+                borderColor: '#ffffff',
+                borderWidth: 10,
+            },
+        },
+        label: {
+            normal: {
+                show: false,
+                position: 'center',
+                formatter: '{text|{b}}\n{value|{d}%}',
+                rich: {
+                    text: {
+                        color: "#666",
+                        fontSize: 14,
+                        align: 'center',
+                        verticalAlign: 'middle',
+                        padding: 5
+                    },
+                    value: {
+                        color: "#8693F3",
+                        fontSize: 24,
+                        align: 'center',
+                        verticalAlign: 'middle',
+                    },
+                }
+            },
+            emphasis: {
+                show: true,
+                textStyle: {
+                    fontSize: 46,
+                }
+            }
+        },
+        data: ydata
+    }]
+};
+myChart1.hideLoading();
+
+if (option && typeof option === "object") {
+    myChart1.setOption(option, true);
+}
+$('#container1').resize(function () {
+    myChart1.resize();
+});
+       </script>
+   </body>
+</html>

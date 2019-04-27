@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-6">
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div id="container6" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+       <script type="text/javascript">
+var dom6 = document.getElementById("container6");
+var myChart6 = echarts.init(dom6);
+var app = {};
+option = null;
+myChart6.showLoading();
+
+var colorList = ['#f75757','#f9cb3f','#27c24c','#2cdafc','#23a2f5'];
+option = {
+    title: {
+        text: '金字塔',
+        subtext: '纯属虚构'
+    },
+    tooltip: {
+        show:false,
+        trigger: 'item',
+        formatter: "{a} <br/>{b} : {c}%"
+    },
+    toolbox: {
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    legend: {
+        data: ['博士','研究生','本科','专科','专科以下']
+    },
+    calculable: true,
+    color:colorList,
+    series: [
+        {
+            name:'漏斗图',
+            type:'funnel',
+            left: '5%',
+            right:'35%',
+            top: '10%',
+            bottom: '10%',
+            minSize: '0%',
+            maxSize: '100%',
+            sort: 'ascending',
+            gap: 2,
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            labelLine: {
+                length: 10,
+                lineStyle: {
+                    width: 1,
+                    type: 'solid'
+                }
+            },
+            itemStyle: {
+                borderColor: '#fff',
+                borderWidth: 1
+            },
+            emphasis: {
+                label: {
+                    fontSize: 20
+                }
+            },
+            markLine:{
+                symbol:'none',
+                lineStyle:{type:'solid'},
+                data: [
+                    [{x:'35%',y:'16%'},{x:'90%',y:'16%',value:'1个',lineStyle:{color:colorList[0]}}],
+                    [{x:'35%',y:'34%'},{x:'90%',y:'34%',value:'3个',lineStyle:{color:colorList[1]}}],
+                    [{x:'35%',y:'50%'},{x:'90%',y:'50%',value:'10个',lineStyle:{color:colorList[2]}}],
+                    [{x:'35%',y:'66%'},{x:'90%',y:'66%',value:'11个',lineStyle:{color:colorList[3]}}],
+                    [{x:'35%',y:'62%'},{x:'90%',y:'62%',value:'5个',lineStyle:{color:colorList[4]}}],
+                ]
+            },
+            data: [
+                {value: 1, name: '博士'},
+                {value: 2, name: '研究生'},
+                {value: 3, name: '本科'},
+                {value: 4, name: '专科'},
+                {value: 5, name: '专科以下'}
+            ]
+        }
+    ]
+};
+
+myChart6.hideLoading();
+
+if (option && typeof option === "object") {
+    myChart6.setOption(option, true);
+}
+//根据窗口的大小变动图表 --- 重点
+$('#container6').resize(function () {
+    myChart6.resize();
+});
+       </script>
+   </body>
+</html>

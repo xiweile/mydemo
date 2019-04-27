@@ -17,7 +17,22 @@
 <!-- 1XjLLEhZhQNUzd93EjU5nOGQ -->
 <div id="container"></div>
 <script type="text/javascript">
-    var map = new BMap.Map("container");          // 创建地图实例
+
+    var outputPath = 'tiles/';    //地图瓦片所在的文件夹
+    var fromat = ".png";    //格式
+
+    var tileLayer = new BMap.TileLayer();
+    tileLayer.getTilesUrl = function (tileCoord, zoom) {
+        var x = tileCoord.x;
+        var y = tileCoord.y;
+        var url = outputPath + zoom + '/' + x + '/' + y + fromat;
+        return url;
+    }
+    var tileMapType = new BMap.MapType('tileMapType', tileLayer);
+
+    var map = new BMap.Map("container", { mapType: tileMapType ,minZoom:7,maxZoom:15});
+
+    //var map = new BMap.Map("container");          // 创建地图实例
     var point = new BMap.Point(108.94646555063274, 34.34726881662395);  // 创建点坐标
     map.centerAndZoom(point, 6);                 // 初始化地图，设置中心点坐标和地图级别
     map.enableScrollWheelZoom(true); // 允许缩放

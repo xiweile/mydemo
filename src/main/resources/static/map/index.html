@@ -41,55 +41,6 @@
     map.addControl(bottom_left_control);
     map.addControl(top_right_navigation);
 
-    // 标注-点
-    var bz_point = new BMap.Point(108.944784,34.25305);
-    map.centerAndZoom(bz_point, 15);
-    var marker = new BMap.Marker(bz_point,{
-        title:'西安市税务局',
-        enableClicking:true,
-    });        // 创建标注
-    marker.addEventListener("click", function(type, target){
-        console.log(type)
-    });
-    map.addOverlay(marker);                     // 将标注添加到地图中
-
-    // 标注-线
-    var polyline_1 = new BMap.Polyline([
-            new BMap.Point(108.861004,34.399121),
-            new BMap.Point(108.944784,34.25305)
-        ],
-        {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,strokeStyle:'dashed'}
-    );
-    var polyline_2 = new BMap.Polyline([
-            new BMap.Point(109.005595,34.353834),
-            new BMap.Point(108.944784,34.25305)
-        ],
-        {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,strokeStyle:'dashed'}
-    );
-    var polyline_3 = new BMap.Polyline([
-            new BMap.Point(109.022555,34.284187),
-            new BMap.Point(108.944784,34.25305)
-        ],
-        {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,strokeStyle:'dashed'}
-    );
-    var polyline_4 = new BMap.Polyline([
-            new BMap.Point(108.883713,34.311862),
-            new BMap.Point(108.944784,34.25305)
-        ],
-        {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,strokeStyle:'dashed'}
-    );
-    var polyline_5 = new BMap.Polyline([
-            new BMap.Point(108.830246,34.209944),
-            new BMap.Point(108.944784,34.25305)
-        ],
-        {strokeColor:"blue", strokeWeight:2, strokeOpacity:0.5,strokeStyle:'dashed'}
-    );
-    map.centerAndZoom(point, 12);
-    map.addOverlay(polyline_1);
-    map.addOverlay(polyline_2);
-    map.addOverlay(polyline_3);
-    map.addOverlay(polyline_4);
-    map.addOverlay(polyline_5);
 </script>
 </body>
 </html>

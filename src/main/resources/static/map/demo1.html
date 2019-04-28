@@ -48,6 +48,8 @@
         title:'西安市税务局',
         enableClicking:true,
     });        // 创建标注
+    var label = new BMap.Label("西安市税务局",{offset:new BMap.Size(20,-10)});
+    marker.setLabel(label);
     marker.addEventListener("click", function(type, target){
         console.log(type)
     });

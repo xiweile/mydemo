@@ -50,7 +50,10 @@ json格式参数配置展示如下：
 2. 修改api js将外网访问部分改为本地，如加载api模块js等.
 3. 下载百度地图瓦片(即各层级需要组合的图片)
 4. 开始使用百度地图api开发
-5. 案例访问地址： http://localhost:8081/map/index.html
+#### 案例展示
+1. 覆盖物点/线： http://localhost:8081/map/demo1.html
+![案例截图](./src/main/resources/pic/demo_map_01.png '离线百度地图-点线覆盖')      
 
-![案例截图](./src/main/resources/pic/demo_map_01.png '离线百度地图截图')      
-           
+2. 热力图： http://localhost:8081/map/demo2.html    
+![案例截图](./src/main/resources/pic/demo_map_02.png '离线百度地图-热力图')      
+      

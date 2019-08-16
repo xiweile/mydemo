@@ -14,7 +14,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @author mac
  *
  */
-@ControllerAdvice(annotations = { RestController.class})
+//@ControllerAdvice(annotations = { RestController.class})
 public class MsgHandler implements ResponseBodyAdvice<Object>{
 	
 	@Override
@@ -30,7 +30,7 @@ public class MsgHandler implements ResponseBodyAdvice<Object>{
 		if("com.weiller.demo.response.Msg".equals(returnTypeName)){
 			return body;
 		}
-		return Msg.success(body);	
+		return Msg.success(body);
 	}
 
 	@Override

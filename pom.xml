@@ -33,7 +33,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<dependency>
+<!--		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
@@ -43,7 +43,7 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<exclusions>
 			</exclusions>
-		</dependency>
+		</dependency>-->
 		<!-- 热部署 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -1,0 +1,44 @@
+globalConfig:
+  author: weiller
+  open: false
+  idType: INPUT
+  dateType: ONLY_DATE
+  enableCache: false
+  activeRecord: false
+  baseResultMap: true
+  baseColumnList: true
+  swagger2: false
+  fileOverride: true
+dataSourceConfig:
+  url: jdbc:oracle:thin:@10.10.0.61:1521:hzgswsbstest
+  driverName: oracle.jdbc.OracleDriver
+  username: SMBS_BZ
+  password: SMBS_BZ
+packageConfig:
+  parent: com.weiller
+  moduleName: rest
+  entity: model
+  service: service
+  serviceImpl: service.impl
+  mapper: dao
+  xml: mapper
+  controller: controller
+  pathInfo:
+    entity_path: src\main\java\com\weiller\rest\model
+    service_path: src\main\java\com\weiller\rest\service
+    service_impl_path: src\main\java\com\weiller\rest\service\impl
+    mapper_path: src\main\java\com\weiller\rest\dao
+    xml_path: src\main\resources\com\weiller\rest\mapper
+    controller_path: src\main\java\com\weiller\rest\controller
+strategyConfig:
+  naming: underline_to_camel
+  columnNaming: underline_to_camel
+  entityLombokModel: true
+  superMapperClass: com.baomidou.mybatisplus.core.mapper.BaseMapper
+  superServiceClass: com.baomidou.mybatisplus.extension.service.IService
+  superServiceImplClass: com.baomidou.mybatisplus.extension.service.impl.ServiceImpl
+  controllerMappingHyphenStyle: true
+  restControllerStyle: true
+  tablePrefix:
+  include:
+    - T_FXNSRMD

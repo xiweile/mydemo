@@ -22,7 +22,7 @@ public class DynamicApi {
     DynamicApiService dynamicApiService;
 
     @ValidateOnAccess
-    @PostMapping(value="{level}/{service}/{method}" , produces="application/json;charset=UTF-8")
+    @PostMapping(value="api/{level}/{service}/{method}" , produces="application/json;charset=UTF-8")
     public Object apiHandler(@PathVariable("level") String level,
                              @PathVariable("service") String service,
                              @PathVariable("method") String method,

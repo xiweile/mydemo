@@ -4,6 +4,8 @@ spring:
 ---
 spring:
   profiles: dev
+  application:
+    name: mydemo
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/demo?useSSL=false
     username: root
@@ -25,6 +27,7 @@ spring:
     enabled: true
     encoding: utf-8
     cache: false
+
 server:
   port: 8081
 

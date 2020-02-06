@@ -1,0 +1,36 @@
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    　　　　　　
+    <property name="APP_Name" value="${spring.application.name}"/>
+    　　　　　　
+    <contextName>/</contextName>
+
+    <!-- 文件输出格式 -->
+    <property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n"/>
+    <appender name="mqAppender1" class="org.apache.rocketmq.logappender.logback.RocketmqLogbackAppender">
+        <tag>LOG</tag>
+        <topic>TopicTest</topic>
+        <producerGroup>test</producerGroup>
+        <nameServerAddress>localhost:9876</nameServerAddress>
+        <layout>
+            <pattern>${PATTERN}</pattern>
+        </layout>
+    </appender>
+
+    <appender name="mqAsyncAppender1" class="ch.qos.logback.classic.AsyncAppender">
+        <queueSize>1024</queueSize>
+        <discardingThreshold>80</discardingThreshold>
+        <maxFlushTime>2000</maxFlushTime>
+        <neverBlock>true</neverBlock>
+        <appender-ref ref="mqAppender1"/>
+    </appender>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="mqAsyncAppender1"/>
+    </root>
+</configuration>

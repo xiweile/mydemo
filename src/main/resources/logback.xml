@@ -31,6 +31,7 @@
     </appender>
     <root level="info">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="mqAsyncAppender1"/>
+        <!--将日志输出到rocketmq-->
+       <!-- <appender-ref ref="mqAsyncAppender1"/>-->
     </root>
 </configuration>

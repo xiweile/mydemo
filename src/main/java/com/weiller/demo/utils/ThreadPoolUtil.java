@@ -11,7 +11,7 @@ public class ThreadPoolUtil {
     private static BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(MAX_CONC);
     private static ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(
             cpuNums*POOL_SIZE,
-            cpuNums*POOL_SIZE,
+            cpuNums*POOL_SIZE*10,
             30,
             TimeUnit.SECONDS,
             queue, new ThreadFactory() {

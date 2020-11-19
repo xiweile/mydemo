@@ -1,4 +1,4 @@
-package com.weiller.demo.thread;
+package com.weiller.demo.thread.executor;
 
 import com.google.common.util.concurrent.*;
 import com.weiller.demo.utils.ThreadPoolUtil;

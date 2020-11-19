@@ -44,6 +44,7 @@ public class WaitSetFutureDemo {
      * @return 响应消息
      */
     private static String requestMsg(String msgId){
+        System.out.println("请求到达："+msgId);
         WaitFuture<String> waitFuture = new WaitFuture<>();
         futureTasks.put(msgId, waitFuture);
         String responseMsg = null;
@@ -83,6 +84,8 @@ public class WaitSetFutureDemo {
             Thread.sleep(new Random().nextInt(5)*200);//模拟响应不同的时间
             listeningMsg( msgId);
         }
+
+        executor1.shutdown();
     }
 
 }

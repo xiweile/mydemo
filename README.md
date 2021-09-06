@@ -51,9 +51,12 @@ json格式参数配置展示如下：
 3. 下载百度地图瓦片(即各层级需要组合的图片)
 4. 开始使用百度地图api开发
 #### 案例展示
-1. 覆盖物点/线： http://localhost:8081/map/demo1.html
+1. 覆盖物点/线： http://localhost:9090/map/demo1.html
 ![案例截图](./src/main/resources/pic/demo_map_01.png '离线百度地图-点线覆盖')      
 
-2. 热力图： http://localhost:8081/map/demo2.html    
+2. 热力图： http://localhost:9090/map/demo2.html    
 ![案例截图](./src/main/resources/pic/demo_map_02.png '离线百度地图-热力图')      
-      
+
+###3.websoket模仿在线聊天
+访问地址：http://localhost:9090/websoket/index.html
+![案例截图](./src/main/resources/pic/websocket1.png 'websoket模仿在线聊天')   

@@ -29,7 +29,7 @@ spring:
     cache: false
 
 server:
-  port: 8081
+  port: 9090
 
 ####SHOW LOGGING
 logging:

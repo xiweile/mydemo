@@ -1,5 +1,5 @@
 # mydemo
-日常学习工作的一些案例,包括自定义桌面、离线地图等。
+日常学习工作的一些案例,包括自定义桌面、离线地图、websoket模仿在线聊天等。
 ## 代码结构
 
     - java  
@@ -57,6 +57,6 @@ json格式参数配置展示如下：
 2. 热力图： http://localhost:9090/map/demo2.html    
 ![案例截图](./src/main/resources/pic/demo_map_02.png '离线百度地图-热力图')      
 
-###3.websoket模仿在线聊天
+### 3.websoket模仿在线聊天
 访问地址：http://localhost:9090/websoket/index.html
 ![案例截图](./src/main/resources/pic/websocket1.png 'websoket模仿在线聊天')   
